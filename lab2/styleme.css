@@ -3,7 +3,7 @@ body {
     background-color: grey;
 }
 .char{
-    color:  whitesmoke;
+    color:  greenyellow;
     font-weight: bold;
 }
 .name{
@@ -11,12 +11,16 @@ body {
     font-style: normal;
     font-weight: bold;
 }
+.bigImage {
+    height: 200px;
+    width: 200px;
+}
 h1{
-    color: whitesmoke;
+    color: black;
     font-weight: 600, bold;
 }
 h2{
-    color: whitesmoke;
+    color: greenyellow;
     font-weight: bold;
 }
 
