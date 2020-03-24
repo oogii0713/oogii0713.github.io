@@ -1,0 +1,25 @@
+/* This is a basic style for about me page for Lab2*/
+body {
+    background-color: grey;
+}
+.char{
+    color:  whitesmoke;
+    font-weight: bold;
+}
+.name{
+    text-decoration: underline;
+    font-style: normal;
+    font-weight: bold;
+}
+h1{
+    color: whitesmoke;
+    font-weight: 600, bold;
+}
+h2{
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+span {
+    font-style: italic;
+}
