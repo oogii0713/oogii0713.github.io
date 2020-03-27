@@ -1,0 +1,28 @@
+/* Apply background color to navigation bar  */
+.navbar{
+    background-color: #39A8E8;
+}
+
+/* veritical divider on Navbar menu */
+.divider {
+    margin: 0 20px;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+/* Navigation bar Hello text style */
+nav span{
+    color: white;
+    margin-right: 1vw;
+    margin-right: 20px;
+}
+
+/* Apply to center div*/
+.center {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+  }
+
+
+
