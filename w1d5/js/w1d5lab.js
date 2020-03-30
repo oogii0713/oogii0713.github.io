@@ -1,3 +1,12 @@
+// Helper function to test following functions result.
+function test(expected, result) {
+    if (expected === result) {
+        return "TEST SUCCEEDED";
+    } else {
+        return "TEST FAILED.  Expected: " + expected + "    Result: " + result;
+    }
+}
+
 // 1. Define a function max() that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript.
 "use strict"
 function max(a, b) {
@@ -7,11 +16,15 @@ function max(a, b) {
         return b;
 }
 
+console.log("Expected output of max(5,10) is 10\t\t" + test(10, max(10, 5)));
+
 // 2. Define a function maxOfThree() that takes three numbers as arguments and returns the largest of them.
 
 function maxOfThree(a,b,c) {
     return max(max(a,b),c);
 }
+
+console.log("Expected output of maxOfThree(10, 5, 20) is 20\t" + test(20, maxOfThree(10, 5, 20)));
 
 // 3. Write a function isVowel() that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 
@@ -24,13 +37,12 @@ function isVowel(c) {
         return false;
 }
 
+console.log("Expected output of isVowel is True\t\t" + test(true, isVowel("u")));
+console.log("Expected output of isVowel is False\t\t" + test(true, isVowel("z")));
+
 // 4   Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an input array of numbers. 
 //      For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24. 
 //      Note/Hint: Do these using Imperative programming approach (i.e. for…loop or while…loop)
-
-
-
-// Calculate sum of arr elements using Imperative 
 
 function sum(arr) {
     let s = 0;
@@ -39,7 +51,7 @@ function sum(arr) {
     return s;
 }
 
-// Calculate multiply of arr elements using Imperative
+console.log("Imperative: Array[1, 2, 3, 4, 5] elements sum is 15\t\t" + test(15, sum([1, 2, 3, 4, 5])));
 
 function multiply(arr) {
     let s = 1;
@@ -47,6 +59,8 @@ function multiply(arr) {
         s *= arr[i];
     return s;
 }
+
+console.log("Imperative: Array[1, 2, 3, 4, 5] elements product is 120\t" + test(120, multiply([1, 2, 3, 4, 5])));
 
 // 11.	Using the Array.reduce(…) function, re-implement your functions, sum(…) and multiply(…) (defined in Problem 4 above) 
 //  without using Imperative programming. i.e. Do NOT use any explicit looping construct; instead use functional programming style/approach. 
@@ -56,10 +70,13 @@ function sum1(arr){
     return arr.reduce((a,b) => a + b, 0);
 }
 
+console.log("Functional: Array[1, 2, 3, 4, 5] elements sum is 15\t\t" + test(15, sum1([1, 2, 3, 4, 5])));
+
 function multiply1(arr){
     return arr.reduce((a,b) => a * b, 1);
 }
 
+console.log("Functional: Array[1, 2, 3, 4, 5] elements product is 120\t" + test(120, multiply1([1, 2, 3, 4, 5])));
 
 // 5.	Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 
@@ -81,6 +98,8 @@ function findLongestWord(words) {
     return maxLen;
 }
 
+console.log("Expected output of reverse is oogii\t\t\t" + test("oogii", reverse("iigoo")));
+
 // 7.	Write a function filterLongWords() that takes an array of words and an integer i and returns a new array containing only those words that were longer than i characters.
 
 function filterLongWords(words, minLen) {
@@ -94,12 +113,18 @@ function filterLongWords(words, minLen) {
     return result;
 }
 
+console.log("Expected output of findLongestWord is 10\t\t" + test(10, findLongestWord(["hello","My","name is","Otgonbayar"])));
+
+
+console.log("Return words more than 3 letter. Input: Hello My name is Otgonbayar");
 // using filter and arrow expression 
 function filterLongWords1(words, minLen) {
     return words.filter(word => {
         return word.length > minLen;
     });
 }
+
+console.log(filterLongWords1(["hello","My","name is","Otgonbayar"],3));
 
 
 // 8.	Write a function named, computeSumOfSquares, that takes as input, an array of numbers and calculates 
@@ -112,14 +137,19 @@ function computeSumOfSquares(arr) {
     .reduce((a,b) => a + b, 0);
 }
 
+console.log("Functional: Array[1, 2, 3, 4, 5] elements squares sum 55\t" + test(55, computeSumOfSquares([1, 2, 3, 4, 5])));
+
 
 // 9.	Write a function named, printOddNumbersOnly, that takes as input, an array of integral numbers and it finds and prints only the numbers which are odd.
+console.log("Print odd numbers: Input array[1, 2, 3, 4, 5]\t");
 
 function printOddNumbersOnly(arr) {
     arr.filter(e => oddChecker(e))
     .forEach(e => console.log(e));
     return arr;
 }
+
+printOddNumbersOnly([1, 2, 3, 4, 5]);
 
 function oddChecker(n) {
     return n % 2 === 1;
@@ -133,6 +163,8 @@ function computeSumOfSquaresOfEvensOnly(arr) {
     .map(e => e * e)
     .reduce((a,b) => a + b, 0);
 }
+
+console.log("Functional: Array[1, 2, 3, 4, 5] elements squares sum 35\t" + test(20, computeSumOfSquaresOfEvensOnly([1, 2, 3, 4, 5])));
 
 // 11 implemented above 
 
@@ -158,6 +190,7 @@ function findSecondBiggest(arr) {
     return second;
 }
 
+console.log("2nd biggest element of [19,9,11,0,12] is 12\t\t\t" + test(12, findSecondBiggest([19, 9, 11 ,0 ,12])));
 
 // 13.	Write a function named printFibo, that takes as input, a given length, n, and any two starting numbers a and b, 
 // and it prints-out the Fibonacci sequence, e.g. (0, 1, 1, 2, 3, 5, 8, 13, 21, 34,…) of the given length, beginning with a and b. 
@@ -168,15 +201,29 @@ function findSecondBiggest(arr) {
 // and printFibo(n=10, a=0, b=1), prints-out: "0, 1, 1, 2, 3, 5, 8, 13, 21, 34", as output). 
 
 function printFibo(n, a, b) {
-    let arr = [];
-    arr[0] = a;
-    arr[1] = b;
-    let len = n;
-    
-    for(let i = 2; i < n; ++i) {
-        arr[i] = arr[i - 1] + arr[i - 2];
+    if(n < 2)
+        console.log(a);
+    else {
+        console.log(a);
+        console.log(b);
     }
-    for (let i = 0; i < len; ++i) 
-        console.log(arr[i]);
-    return arr;
+        
+    
+    let next = 1;
+    for(let i = 2; i < n; ++i) {
+        next = a + b;
+        console.log(next);
+        a = b;
+        b = next;
+    }
+
+    return next;
 }
+console.log("Tests for printes out Fibonacci");
+console.log("printFibo(n=2, a=0, b=1)\t\t\t" + printFibo(2, 0, 1));
+console.log("printFibo(n=3, a=0, b=1)\t\t\t" + printFibo(3, 0, 1));
+console.log("printFibo(n=6, a=0, b=1)\t\t\t" + printFibo(6, 0, 1));
+console.log("printFibo(n=10, a=0, b=1)\t\t\t" + printFibo(10, 0, 1));
+
+
+
