@@ -1,0 +1,21 @@
+body {
+	background-color:#1C1C1C;
+	text-align:center;
+	font-family:helvetica;
+}
+
+
+
+#clock {
+    position: absolute;
+    width:500px;
+    color: silver;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    border:2px dashed #2E9AFE;
+    padding: 10px;
+    box-shadow: 0 0 5px 3px #cccccc;
+    font-size: 90px;    
+}

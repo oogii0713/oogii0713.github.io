@@ -8,6 +8,17 @@
     <!--2. Style from bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>w1d4HW - Web Form2</title>
+    <script>
+      function popalert() {
+        let pNum = document.getElementById("productNumber").value;
+        let pN = document.getElementById("pName").value;
+        let uP = document.getElementById("unitPrice").value;
+        let sN = document.getElementById("supplierName").value;
+        let sD = document.getElementById("supplyDate").value;
+        let pQ = document.getElementById("pQuantity").value;
+        alert("Product name: " + pN + "\nProduct number: " + pNum + "\nUnit Price: " +  uP + "\nQuantity in stock: "  +  pQ + "\nSupplier name: " + sN + "\nSupplied date: " + sD);
+      }
+    </script>
 
 </head>
 <body>
@@ -48,34 +59,34 @@
               <div class="col-6"> 
                 <div class="form-group">
                   <label>Product number</label>
-                  <input type="text" name='pnumber' class="form-control" required>
+                  <input type="text" name='pnumber' id="productNumber" class="form-control" required>
                 </div>
                 <div class="form-group">
                   <label>Name</label>
-                  <input type="text" name='name' class="form-control" required>
+                  <input type="text" name='name' id="pName" class="form-control" required>
                 </div>
                 <div class="form-group">
                   <label>Unit Price</label>
-                  <input type="number" name="unit-price" class="form-control" step="any" value="0.0" required/>
+                  <input type="number" name="unit-price" id="unitPrice" class="form-control" step="any" value="0.0" required/>
                 </div>
             </div>
             <div class="col-6"> 
               <div class="form-group">
                 <label>Quantity in stock</label>
-                <input type="text" name='quantity' class="form-control" value="0" required/>
+                <input type="text" name='quantity' id="pQuantity" class="form-control" value="0" required/>
               </div>
               <div class="form-group">
                 <label>Supplier:</label>
-                <select class="form-control" name="supplier" required>
+                <select class="form-control" name="supplier" id="supplierName" required>
                   <option value="" selected disabled>Select a supplier</option>
-                  <option value="">Walmart</option>
-                  <option value="">HyVee</option>
-                  <option value="">Amazon</option>
+                  <option value="Walmart">Walmart</option>
+                  <option value="HyVee">HyVee</option>
+                  <option value="Amazon">Amazon</option>
                 </select>
               </div>
               <div class="form-group">
                 <label>Date Supplied</label>
-                <input type="date" name="suppliedDate" class="form-control" required/>
+                <input type="date" name="suppliedDate" id="supplyDate" class="form-control" required/>
                 <small class="form-text text-muted">Enter a valid Date.</small>
               </div>
             </div>
@@ -83,7 +94,7 @@
           <div class="row justify-content-md-end">
             <button type="reset" class="btn btn-outline-dark m-2">Reset</button>
             <button type="button" class="btn btn-outline-warning m-2" onclick="alert('cancelled');">Cancel</button>
-            <button type="submit" class="btn btn-outline-primary m-2">Add Product</button>
+            <button onclick="popalert();" type="submit" class="btn btn-outline-primary m-2">Add Product</button>
           </div>
         </form>
       </div>

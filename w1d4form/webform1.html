@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>w1d4HW - Web Form1</title>
-
+    <script>
+      function printInput() {
+        let urlText = document.getElementById("weburl1").value;
+        let emailText = document.getElementById("exampleInputEmail1").value;
+        let passWord = document.getElementById("exampleInputPassword1").value;
+        console.log(urlText + " " + emailText + " " + passWord);
+      }
+    </script>
 </head>
 <body>
     <header>
@@ -42,8 +49,9 @@
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button onclick="printInput();" type="submit" class="btn btn-primary">Submit</button>
               </form>
+              
         </div>
     </main>
    
