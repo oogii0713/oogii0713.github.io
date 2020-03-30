@@ -1,17 +1,22 @@
 window.onload = function() {
     "use strict";
     // put all of your code here
-
+    // calling function interval using unobstrusive style
     document.getElementById("btnForBG").onclick = interval;
+    
+    // calling function textStyle using unobstrusive style. it will change the style of text area when check box is checked
     document.getElementById("bling").onchange = textStyle;
+
+    // calling functions using unobstrusive style to update text area values.
     document.getElementById("btnPig").onclick = igpay;
     document.getElementById("btnMalkov").onclick = malkov;
 }
-
+// Function to popup alert for intial test
 function newAlert() {
     alert("Hello, World!");
 }
 
+// Function to enlarge text size of text area
 function enlargeFont() {
     let textArea = document.getElementById("txtarea");
     let size = parseInt(textArea.style.fontSize) ? parseInt(textArea.style.fontSize) : 12;
@@ -19,6 +24,7 @@ function enlargeFont() {
     textArea.style.fontSize =  size + "pt";
 }
 
+// Function to change text Area text style based on either checkbox is checked or not
 function textStyle() {
     if (document.getElementById("bling").checked == true) {
         document.getElementById("txtarea").style.fontWeight = "bold";
@@ -34,6 +40,7 @@ function textStyle() {
     }
 }
 
+// Global variable to keep autoreferesh value
 var timer = null;
 
 function interval() {
