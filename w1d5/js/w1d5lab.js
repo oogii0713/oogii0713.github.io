@@ -87,6 +87,8 @@ function reverse(str) {
     return result;
 }
 
+console.log("Expected output of reverse is oogii\t\t\t" + test("oogii", reverse("iigoo")));
+
 // 6.	Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 
 function findLongestWord(words) {
@@ -98,7 +100,8 @@ function findLongestWord(words) {
     return maxLen;
 }
 
-console.log("Expected output of reverse is oogii\t\t\t" + test("oogii", reverse("iigoo")));
+console.log("Expected output of findLongestWord is 10\t\t" + test(10, findLongestWord(["hello","My","name is","Otgonbayar"])));
+
 
 // 7.	Write a function filterLongWords() that takes an array of words and an integer i and returns a new array containing only those words that were longer than i characters.
 
@@ -106,22 +109,18 @@ function filterLongWords(words, minLen) {
     let result = [];
     for (let i = 0; i < words.length; ++i) {
         if (minLen < words[i].length ) {
-            console.log(words[i]);
             result.push(words[i]);
         }
     }
     return result;
 }
 
-console.log("Expected output of findLongestWord is 10\t\t" + test(10, findLongestWord(["hello","My","name is","Otgonbayar"])));
-
+console.log(filterLongWords(["hello","My","name is","Otgonbayar"],3));
 
 console.log("Return words more than 3 letter. Input: Hello My name is Otgonbayar");
 // using filter and arrow expression 
 function filterLongWords1(words, minLen) {
-    return words.filter(word => {
-        return word.length > minLen;
-    });
+    return words.filter(word => word.length > minLen);
 }
 
 console.log(filterLongWords1(["hello","My","name is","Otgonbayar"],3));
