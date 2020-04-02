@@ -145,6 +145,9 @@
         const getAge = function() { return age; };
         const getSalary = function() { return salary; };
         const getName = function() { return name; };
+        const getEmpInfo = function() {
+            return `Name: ${getName()}\nAge: ${getAge()}\nSalary + ${getSalary()}`;
+        };
 
         const increaseSalary = function(percentage) { return setSalary(getSalary() * (1 + percentage)); };
         const incrementAge = function() { return setAge(getAge() + 1); }
@@ -153,10 +156,17 @@
             setSalary: setSalary,
             setName: setName,
             increaseSalary: increaseSalary,
-            incrementAge: incrementAge
+            incrementAge: incrementAge,
+            getEmpInfo: getEmpInfo
         };
     })();
 
+    employeeModule.setName('Oogii');
+    employeeModule.setAge(32);
+    employeeModule.setSalary(150000.0);
+    employeeModule.incrementAge();
+    employeeModule.increaseSalary(0.10);
+    console.log(employeeModule.getEmpInfo());
 
 
 
