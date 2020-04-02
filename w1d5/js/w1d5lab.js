@@ -224,5 +224,26 @@ console.log("printFibo(n=3, a=0, b=1)\t\t\t" + printFibo(3, 0, 1));
 console.log("printFibo(n=6, a=0, b=1)\t\t\t" + printFibo(6, 0, 1));
 console.log("printFibo(n=10, a=0, b=1)\t\t\t" + printFibo(10, 0, 1));
 
+function printFibo1(n, a, b) {
+    if(n === 0) return;
+    if(n === 1) return console.log(a);
+    if(n === 2) return console.log(a, b);
+        
+    let result = [a,b];
+    let nextA = a, nextB = b;
+    for(let i = 2; i < n; ++i) {
+        let next = nextA + nextB;
+        nextA = nextB;
+        nextB = next;
+        result.push(next);
+    }
+
+    return console.log(result);
+}
 
 
+console.log("Tests for printes out Fibonacci");
+console.log("printFibo1(n=2, a=0, b=1)\t\t\t" + printFibo1(2, 0, 1));
+console.log("printFibo1(n=3, a=0, b=1)\t\t\t" + printFibo1(3, 0, 1));
+console.log("printFibo1(n=6, a=0, b=1)\t\t\t" + printFibo1(6, 0, 1));
+console.log("printFibo1(n=10, a=0, b=1)\t\t\t" + printFibo1(10, 0, 1));
