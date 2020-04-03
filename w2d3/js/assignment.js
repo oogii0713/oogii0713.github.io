@@ -1,4 +1,13 @@
+/**
+ * 
+ * assignment9
+ * @author Oogii M
+ */
+
+
 "use strict"
+
+
 // 1.	Define a JavaScript object literal named, person, with the following specification:
 // a.	Person object should have the properties:
 //          i.	name (initialize this with empty string value)
@@ -8,17 +17,19 @@
 //          ii.	setName (should take as input parameter, a String value which it sets as the person’s name) 
 
 const person = {
-    'name': '',
-    'dateOfBirth': '',
-    'getName': function() {return this.name;},
-    'setName': function(newName) {return this.name = newName;}
+    name: "",
+    dateOfBirth: "",
+    getName: function() {return this.name;},
+    setName: function(newName) {return this.name = newName;}
 };
+
+// 
 
 const john = Object.create(person);
 // john.name = "John";
 john.setName("John");
-john.dateOfBirth = "1998-12-10";
-console.log(`The person’s name is ${john.getName()}\n${john.getName()} was born on ${john.dateOfBirth}`);
+john.dateOfBirth =  new Date("1998-12-10");
+console.log(`The person’s name is ${john.getName()}\n${john.getName()} was born on ${john.dateOfBirth.getFullYear()}-${john.dateOfBirth.getMonth() + 1}-${john.dateOfBirth.getDate()}`);
 
 
 // 2.	Given that an Employee IS-A person, applying JavaScript inheritance and the Object.create(…) method, 
@@ -26,7 +37,7 @@ console.log(`The person’s name is ${john.getName()}\n${john.getName()} was bor
 
 const employee = Object.create(person);
 employee.salary = 0;
-employee.hireDate = "2020-04-02";
+employee.hireDate = new Date("2020-04-02");
 employee.doJob = function(jobTitle) {
     console.log(`${employee.getName()} is a ${jobTitle} who earns $${employee.salary}`);
 };
@@ -34,9 +45,6 @@ employee.doJob = function(jobTitle) {
 employee.setName("Anna");
 employee.salary=249995.50;
 employee.doJob("Programmer");
-
-
-
 
 
 // 3.	Re-write the person object specification described in Question 1 above, but this time, 
@@ -51,12 +59,8 @@ function Person(name, dateOfBirth) {
 Person.prototype.getName = function() { return this.name;}
 Person.prototype.setName = function(newName) { return this.name = newName;}
 Person.prototype.toString = function() {
-    return `Name: ${this.getName()}, DateOfBorth ${this.dateOfBirth}`;
+    return `Name: ${this.getName()}, DateOfBorth ${this.dateOfBirth.getFullYear()}-${this.dateOfBirth.getMonth() + 1}-${this.dateOfBirth.getDate()}`;
 }
 
-const peter = new Person("Peter","1985-11-10");
-console.log(peter.toString());
-
-const test = new Person("Oogii","asdasd");
-console.log(test.toString());
+const peter = new Person("Peter",new Date("1985-11-10"));
 console.log(peter.toString());
