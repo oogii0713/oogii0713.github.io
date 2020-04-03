@@ -38,8 +38,8 @@
 // Revealing Module pattern 
     const countModule = (function() {
         let counter = 0;
-        function increment(val) { counter += val;} // private inner function
-        function reset() {counter = 0;} // private inner function
+        function increment(val) { return counter += val;} // private inner function
+        function reset() {return counter = 0;} // private inner function
         return {
             add: function() {increment(1);},
             reset: function() {reset();},

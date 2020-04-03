@@ -3,6 +3,9 @@ window.onload = function() {
     // put all of your code here
     // calling function interval using unobstrusive style
     document.getElementById("btnForBG").onclick = interval;
+
+    // Stop bigger decorations
+    document.getElementById("btnStopForBG").onclick = stopDecoration;
     
     // calling function textStyle using unobstrusive style. it will change the style of text area when check box is checked
     document.getElementById("bling").onchange = textStyle;
@@ -41,36 +44,36 @@ function textStyle() {
 }
 
 // Global variable to keep autoreferesh value
-var timer = null;
+let timer;
 
 function interval() {
-    if (timer == null) {
-        timer = setInterval(enlargeFont, 500);;
-    } else {
-        clearInterval(timer);
-        timer = null;
-    }
+    timer = setInterval(enlargeFont, 1000);
+}
+
+function stopDecoration() {
+    clearInterval(timer);
 }
 
 function igpay() {
-    let words = document.getElementById("txtarea").value;
-    let splittedword = words.split(/\s+/);
+    let curText = document.getElementById("txtarea").value;
+    let words = curText.split(/\s+/); // Array
     let result = "";
-    for (let i = 0; i < splittedword.length; i++) {
-        if (splittedword[i].charAt(0).match("[aeoiuAEOIU]")) {
-            changed = splittedword[i] + "ay";
-        } else {
-            let word = splittedword[i];
-            for (let j = 0; j < word.length; j++) {
-                if (word[j].match("[aeoiuAEOIU]")) {
-                    let changed = word.substring(j) + word.substring(0, j) + "ay";
-                    break;
+    for (const word of words) {
+        const firstChar = word.charAt(0);
+        if((firstChar.charCodeAt(0) >= 65 && firstChar.charCodeAt(0) <= 90) || (firstChar.charCodeAt(0) >= 97 && firstChar.charCodeAt(0) <= 122)) {
+            if (firstChar.match("[aeoiuAEOIU]")) {
+                result = result.concat(word, "ay ")
+            } else {
+                let conso = firstChar;
+                let i = 1;
+                const nextChar = word.charAt(i);
+                while(nextChar.match("[aeoiuAEOIU]") == -1) {
+                    conso += nextChar;
+                    i++;
                 }
-
+                result = result.concat(word.charAt(i), word.substring(i+1), conso, "ay ");
             }
         }
-        result += changed + " ";
-
     }
     document.getElementById("txtarea").value = result;
 }

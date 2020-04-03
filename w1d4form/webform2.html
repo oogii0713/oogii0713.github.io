@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!--1. External style for form 2-->
     <link rel="stylesheet" href="./form2.css">
     <!--2. Style from bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>w1d4HW - Web Form2</title>
     <script>
+      $(function() {
+        $("#w1d4form2").submit(event => {
+          const pNum = $("#productNumber").val();
+          const pN = $("#pName").val();
+          const uP = $("#unitPrice").val();
+          const sN = $("#supplierName").val();
+          const sD = $("#supplyDate").val();
+          const pQ = $("#pQuantity").val();
+          $("#txtarea").val(`Product name: ${pN} \nProduct number: ${pNum} \nUnit Price: ${uP} \nQuantity in stock: ${pQ} \nSupplier name: ${sN} \nSupplied date: ${sD}`);
+          event.preventDefault();
+        }); 
+      }); 
+       
       function popalert() {
-        let pNum = document.getElementById("productNumber").value;
-        let pN = document.getElementById("pName").value;
-        let uP = document.getElementById("unitPrice").value;
-        let sN = document.getElementById("supplierName").value;
-        let sD = document.getElementById("supplyDate").value;
-        let pQ = document.getElementById("pQuantity").value;
+        const pNum = document.getElementById("productNumber").value;
+        const pN = document.getElementById("pName").value;
+        const uP = document.getElementById("unitPrice").value;
+        const sN = document.getElementById("supplierName").value;
+        const sD = document.getElementById("supplyDate").value;
+        const pQ = document.getElementById("pQuantity").value;
         alert("Product name: " + pN + "\nProduct number: " + pNum + "\nUnit Price: " +  uP + "\nQuantity in stock: "  +  pQ + "\nSupplier name: " + sN + "\nSupplied date: " + sD);
       }
     </script>
@@ -54,7 +68,7 @@
             <h2>New Product Form</h2>
           </div>
           <!--Used BootStrap Grid-->
-          <form method="POST" class="center">
+          <form id="w1d4form2" method="POST" class="center">
             <div class="row justify-content-md-center">
               <div class="col-6"> 
                 <div class="form-group">
@@ -94,7 +108,14 @@
           <div class="row justify-content-md-end">
             <button type="reset" class="btn btn-outline-dark m-2">Reset</button>
             <button type="button" class="btn btn-outline-warning m-2" onclick="alert('cancelled');">Cancel</button>
-            <button onclick="popalert();" type="submit" class="btn btn-outline-primary m-2">Add Product</button>
+            <button id="addProductBtn" type="submit" class="btn btn-outline-primary m-2">Add Product</button>
+          </div>
+  
+          <div class="form-group">
+            <fieldset>
+              <label>Product Info</label><br>
+              <textarea id="txtarea" cols="30" rows="6" placeholder="Insert values in the form"></textarea>
+            </fieldset>
           </div>
         </form>
       </div>
