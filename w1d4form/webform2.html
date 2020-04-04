@@ -3,44 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script defer src="script/jquery.min.js"></script>
+    <script defer src="script.js"></script>
     <!--1. External style for form 2-->
     <link rel="stylesheet" href="./form2.css">
     <!--2. Style from bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>w1d4HW - Web Form2</title>
-    <script defer>
-      $(function() {
-        $("#w1d4form2").submit(event => {
-          event.preventDefault();
-          const pNum = $("#pNumber").val();
-          const pN = $("#pName").val();
-          const uP = $("#unitPrice").val();
-          const sN = $("#supplierName").val();
-          const sD = $("#supplyDate").val();
-          const pQ = $("#pQuantity").val();
-          const pDivData = $("#divProduct");
-          $("#pProdNum").text(`Product Number: ${pNum} \n`);
-          $("#pProdName").text(`Product name: ${pN} \n`);
-          $("#pProdPrice").text(`Unit Price: ${uP} \n`);
-          $("#pQty").text(`Product Quantity: ${pQ} \n`);
-          $("#pProdSupplier").text(`Supplier name: ${sN} \n`);
-          $("#pProdDate").text(`Supplied date: ${sD}`);
-          pDivData.css("display", "block");
-        }); 
-      }); 
-       
-      function popalert() {
-        const pNum = document.getElementById("pNumber").value;
-        const pN = document.getElementById("pName").value;
-        const uP = document.getElementById("unitPrice").value;
-        const sN = document.getElementById("supplierName").value;
-        const sD = document.getElementById("supplyDate").value;
-        const pQ = document.getElementById("pQuantity").value;
-        alert("Product name: " + pN + "\nProduct number: " + pNum + "\nUnit Price: " +  uP + "\nQuantity in stock: "  +  pQ + "\nSupplier name: " + sN + "\nSupplied date: " + sD);
-      }
-    </script>
-
 </head>
 <body>
     <header>
