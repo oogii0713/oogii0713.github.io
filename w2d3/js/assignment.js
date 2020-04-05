@@ -39,7 +39,7 @@ const employee = Object.create(person);
 employee.salary = 0;
 employee.hireDate = new Date("2020-04-02");
 employee.doJob = function(jobTitle) {
-    console.log(`${employee.getName()} is a ${jobTitle} who earns $${employee.salary}`);
+    console.log(`${this.getName()} is a ${jobTitle} who earns $${this.salary}`);
 };
 
 employee.setName("Anna");
