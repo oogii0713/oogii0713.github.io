@@ -1,0 +1,19 @@
+/* veritical divider on Navbar menu */
+.divider {
+    margin: 0 20px;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+#mainDiv {
+    float: right;
+}
+
+#footDiv {
+    background-color: rgb(233, 224, 224);
+}
+
+#clock {
+    color: white;
+}
+
