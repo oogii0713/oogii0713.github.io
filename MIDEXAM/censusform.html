@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        <script defer src="js/script.js"></script>
+        <script defer src="js/census.js"></script>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -24,7 +24,7 @@
                   <ul class="navbar-nav mr-auto">
                     <li class="divider"></li>
                     <li class="nav-item">
-                      <a class="nav-link" href="./index.html"> Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="./censushome.html"> Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="divider"></li>
                     <li class="nav-item active">
@@ -88,19 +88,18 @@
                     </div>
                   <hr>
                 </form>
-                <table id ="citizenTable" class="table table-striped">
-                    <thead>
+                <table class="table table-striped" id="citizenTable">
+                  <thead>
                       <tr>
-                        <th>Citizen ID</th>
-                        <th>Social Security</th>
-                        <th>Full Name</th>
-                        <th>State</th>
-                        <th>Senior</th>
+                          <th>Citizen ID</th>
+                          <th>Social Security</th>
+                          <th>Full Name</th>
+                          <th>State</th>
+                          <th>Senior</th>
                       </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>  
+                  </thead>
+                  <tbody>
+                  </tbody>
             </div>
         </main>
         <footer>

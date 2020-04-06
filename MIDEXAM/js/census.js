@@ -11,7 +11,7 @@ $(document).ready(function() {
       const state = $("#state option:selected").val();
       const radioValue = $("input[name='options']:checked").val();      
       
-      $("#citizenTable tr:last").after(`<tr>
+      $('#citizenTable').append(`<tr>
         <td>${name}</td>
         <td>${cizenID}</td>
         <td>${ssn}</td>
@@ -20,7 +20,6 @@ $(document).ready(function() {
       </tr>`);
     }); 
   });
-
   
   function clockUpdate() {
       const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
