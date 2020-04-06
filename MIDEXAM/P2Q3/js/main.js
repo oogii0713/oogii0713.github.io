@@ -8,7 +8,7 @@
   function reverseInPlace(nums) {
     return nums.reverse();
   }
-
+  
   document.getElementById("root").innerHTML =
     "Function : " +
     multiplesCount +
