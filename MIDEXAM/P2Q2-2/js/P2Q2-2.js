@@ -14,5 +14,4 @@
     let RedHondaAccord = new Car('Honda', 'Accord', 'red');
     RedHondaAccord.drive(300);
     RedHondaAccord.stop();
-
 })();
