@@ -10,7 +10,10 @@
 }
 
 #footDiv {
-    background-color: rgb(233, 224, 224);
+    background-color: lightgray;
+    position: fixed;
+    width: 100%;
+    bottom: 0em;
 }
 
 #clock {
