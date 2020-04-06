@@ -5,14 +5,13 @@ $(document).ready(function() {
 
     $("#midForm").submit(event => {
       event.preventDefault();
-      let name = $("#fullname").val();
-      let cizenID = $("#cizenID").val();
-      let ssn = $("#ssn").val();
-      let state = $("#state option:selected").val();
-      let radioValue = $("input[name='options']:checked").val();
-
+      const name = $("#fullname").val();
+      const cizenID = $("#cizenID").val();
+      const ssn = $("#ssn").val();
+      const state = $("#state option:selected").val();
+      const radioValue = $("input[name='options']:checked").val();      
       
-      $("#citizenTable tbody").after(`<tr>
+      $("#citizenTable tr:last").after(`<tr>
         <td>${name}</td>
         <td>${cizenID}</td>
         <td>${ssn}</td>
