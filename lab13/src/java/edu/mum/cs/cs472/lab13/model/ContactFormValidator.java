@@ -1,4 +1,4 @@
-package edu.mum.cs.cs472.lab13.controller;
+package edu.mum.cs.cs472.lab13.model;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ProcessContactFormController", urlPatterns = {"/process-contact-form"})
-public class ProcessContactFormController extends HttpServlet {
+public class ContactFormValidator extends HttpServlet {
 
-    public ProcessContactFormController() {
+    public ContactFormValidator() {
         super();
     }
 
