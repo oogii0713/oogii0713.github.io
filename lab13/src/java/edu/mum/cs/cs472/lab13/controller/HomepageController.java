@@ -9,6 +9,8 @@ import java.io.IOException;
 
 @WebServlet(name = "HomepageController", urlPatterns = { "", "/index", "/home"})
 public class HomepageController extends HttpServlet {
+    private String jspName = "/WEB-INF/views/index.jsp";
+    private String statusHome = "active";
     public HomepageController() {
         super();
     }
@@ -20,6 +22,7 @@ public class HomepageController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
+        request.setAttribute("statusHome", statusHome);
+        request.getRequestDispatcher(jspName).forward(request, response);
     }
 }

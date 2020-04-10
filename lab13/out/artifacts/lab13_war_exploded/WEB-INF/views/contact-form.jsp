@@ -73,7 +73,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label>*Message</label>
-                            <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+                            <textarea class="form-control" name="message" id="message" rows="3">${param.message}</textarea>
                         </div>
                     </div>
                     <div class="col-12">
@@ -85,7 +85,7 @@
         <div class="container">
             <br>
             <span>Hit Count for this page: ${hitCount}</span>
-            <span style="float: right;">Total Hit Count for entire WebApp: --</span>
+            <span style="float: right;">Total Hit Count for entire WebApp: ${totalHitCount}</span>
         </div>
     </main>
 <jsp:include page="../fragments/footer.jsp"/>

@@ -40,8 +40,8 @@
     </main>
     <div class="container">
         <br>
-        <span>Hit Count for this page: </span>
-        <span style="float: right;">Total Hit Count for entire WebApp:--</span>
+        <span>Hit Count for this page: ${hitCount}</span>
+        <span style="float: right;">Total Hit Count for entire WebApp: ${totalHitCount}</span>
     </div>
     <jsp:include page="../fragments/footer.jsp"/>
 </body>

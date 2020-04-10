@@ -11,6 +11,7 @@ import java.io.IOException;
 public class ContactFormController extends HttpServlet {
     private int hitCount;
     private String jspName = "/WEB-INF/views/contact-form.jsp";
+    private String statusForm = "active";
 
     public ContactFormController() {
         super();
@@ -27,8 +28,9 @@ public class ContactFormController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         incrHitCount();
+        request.setAttribute("statusForm", statusForm);
         request.setAttribute("hitCount", hitCount);
-        request.getRequestDispatcher("/WEB-INF/views/contact-form.jsp").forward(request, response);
+        request.getRequestDispatcher(jspName).forward(request, response);
     }
 
     @Override
