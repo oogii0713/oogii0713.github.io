@@ -30,6 +30,7 @@ public class CurrDateTimeTag extends SimpleTagSupport {
         }
         sb.append(currDate);
         sb.append("</span>");
+        System.out.println(sb.toString());
         JspWriter jspWriter = getJspContext().getOut();
         jspWriter.append(sb.toString());
     }
