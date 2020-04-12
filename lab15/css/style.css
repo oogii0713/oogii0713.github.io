@@ -3,6 +3,12 @@ html {
     min-height: 100%;
 }
 
+.divider {
+    margin: 0 20px;
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
 body {
     /* Margin bottom by footer height */
     margin-bottom: 50px;

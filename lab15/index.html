@@ -14,44 +14,51 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="${pageContext.request.contextPath}/home">The eLibarary&reg : : : Lab15 Demo WebApp</a>
+            <a class="navbar-brand" href="index.html">The eLibarary&reg : : : Lab15 Demo WebApp</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                    <li class="divider"></li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="divider"></li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
+                    <li class="divider"></li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Virtual Tour</a>
                     </li>
+                    <li class="divider"></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Books</a>
+                        <a class="nav-link" href="books.html">Books</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                <span class="navbar-text text-white">
+                    Welcome, Guest
+                </span>
             </div>
         </nav>
     </header>
     <main>
         <div class="container">
             <p>&nbsp;</p>
+            <p class="h2 text-primary">Welcome to the eLibrary&reg</p>
+            <hr>
             <div class="jumbotron">
-                <h1 class="display-3">Hello, world of HttpServlet 4.0!</h1>
-                <h3>Implement JSP Custom tags: Lab14</h3>
+                <h1 class="display-6">CS472 Lecutre15 - AJAX</h1>
                 <hr class="my-4">
-                <p class="lead">Model 2 Architecture aka <b>Model-View-Controller (MVC) architecture</b></p>
-                <p>
-                    <c:if test="${true}">
-                        <span>Using &lt;ct:CurrentDateTime/&gt;, Server date is: </span><ct:currDateTime color="red" size="18px" /><br/>
-                    </c:if>
+                <p>We are a top-flight, full-digitized library. Find out about us and lear how we can serve you with a widest variety of boosk and 
+                    a lots of other digital content, all for your education as well as your entertainment. You can alo take a virtual tour of, our world-class
+                    facilities and be amazed at all what we have in stock for you, your family and friends
+                </p>
+                <p>Lorem ipsum is simply dummy text of the priniting and typesetting industry. Lorem Ipsum has been the industry's standard dummy text 
+                    ever since the 1500s when an unknown printer too a galley of type and scrambled it to make a type specimen book. It has survivied not only five centuries.
+                </p>
+                <p>Already have access as a Member, Librarian or System Administrator? Then, simply Sign-In to access the fill range pf servoces aviablable to you, based on your roled and access rights.
                 </p>
                 <p>&nbsp;</p>
                 <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
