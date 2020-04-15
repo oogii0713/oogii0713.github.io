@@ -17,7 +17,7 @@ function loadBookInfo() {
         let i = 0;
         $.each(response, function(key, value) {
             let book ='';
-            book += '<tr>',
+            book += '<tr>';
             book += '<td>' +(++i)+'</td>';
             book += '<td>' +value.isbn+'</td>';
             book += '<td>' +value.title+'</td>';
